@@ -87,8 +87,8 @@ builder.Services.AddSwaggerGen(option =>
 builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddTransient<IDoctorRepository, DoctorRepository>();
 builder.Services.AddTransient<IDoctorService, DoctorService>();
-//builder.Services.AddScoped(typeof(IDoctorRepository), typeof(DoctorRepository));
-//builder.Services.AddScoped(typeof(IDoctorService), typeof(DoctorService));
+builder.Services.AddTransient<IPatientRepository, PatientRepository>();
+builder.Services.AddTransient<IPatientService, PatientService>();
 
 var app = builder.Build();
 

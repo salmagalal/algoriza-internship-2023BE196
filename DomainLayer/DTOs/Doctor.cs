@@ -10,7 +10,7 @@ namespace DomainLayer.DTOs
 {
     public class Doctor : RegisterUser
     {
-        //[Required(ErrorMessage ="Image is required.")]
+        [Required(ErrorMessage ="Image is required.")]
         public new byte[]? Image { get; set; }
 
         [Required(ErrorMessage = "specialization is required.")]
