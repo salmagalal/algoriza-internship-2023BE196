@@ -12,5 +12,11 @@ namespace ServiceLayer.ICustomServices
         Task AddDoctorAsync(Doctor doctor);
 
         IQueryable<DoctorDetails> GetDoctorById(int Id);
+
+        List<DoctorDetails> GetAllDoctors(int pageNumber, int pageSize, string search);
+
+        Task<bool> DeleteDoctorAsync(int id);
+
+        Task<bool> UpdateDoctorAsync(int id, UpdateDoctor doctor);
     }
 }

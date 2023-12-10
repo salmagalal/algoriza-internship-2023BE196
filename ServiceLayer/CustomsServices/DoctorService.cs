@@ -29,5 +29,20 @@ namespace ServiceLayer.CustomsServices
              return _repository.GetDoctorById(Id);
         }
 
+        public List<DoctorDetails> GetAllDoctors(int pageNumber, int pageSize, string search)
+        {
+            return _repository.GetAllDoctors(pageNumber, pageSize, search); 
+        }
+
+
+        public async Task<bool> DeleteDoctorAsync(int id)
+        {
+            return await _repository.DeleteDoctorById(id);
+        }
+
+        public async Task<bool> UpdateDoctorAsync(int id, UpdateDoctor doctor)
+        {
+            return await _repository.UpdateDoctor(id, doctor);
+        }
     }
 }

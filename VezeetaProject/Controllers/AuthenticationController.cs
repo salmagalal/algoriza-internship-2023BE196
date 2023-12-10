@@ -32,7 +32,6 @@ namespace VezeetaWebsite.Controllers
             _emailService = emailService;
             _configuration = configuration;
         }
-        
 
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterUser registerPatient)
@@ -70,17 +69,17 @@ namespace VezeetaWebsite.Controllers
                     new Response { Status = "Success", Message = "User created Successfully." });
         }
 
-        [HttpGet]
-        public IActionResult TestEmail()
-        {
-            var message =
-                new Message(new string[]
-                {"salmaahmedgalal@gmail.com"}, "Test", "<h1>This email from vezeeta to test</h1>");
+        //[HttpGet]
+        //public IActionResult TestEmail()
+        //{
+        //    var message =
+        //        new Message(new string[]
+        //        {"salmaahmedgalal@gmail.com"}, "Test", "<h1>This email from vezeeta to test</h1>");
 
-            _emailService.SendEmail(message);
-            return StatusCode(StatusCodes.Status200OK,
-                new Response { Status = "Success", Message = "Email Sent Successfully." });
-        }
+        //    _emailService.SendEmail(message);
+        //    return StatusCode(StatusCodes.Status200OK,
+        //        new Response { Status = "Success", Message = "Email Sent Successfully." });
+        //}
 
         [HttpPost]
         [Route("login")]
